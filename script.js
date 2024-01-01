@@ -23,6 +23,7 @@ let ulEl = document.getElementById("ul-el");
 
 btnEl.addEventListener("click", function () {
   push(cartlocation, inputEl.value);
+  inputEl.value = ""
 });
 
 onValue(cartlocation, function (snapshot) {
@@ -41,7 +42,7 @@ onValue(cartlocation, function (snapshot) {
       newItem.addEventListener("click", function () {
         let exacthlocation = ref(database, `Cart/${items[i][0]}`);
         remove(exacthlocation);
-        inputEl.value = ""
+ 
       });
       ulEl.appendChild(newItem);
     }
