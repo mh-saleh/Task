@@ -41,6 +41,7 @@ onValue(cartlocation, function (snapshot) {
       newItem.addEventListener("click", function () {
         let exacthlocation = ref(database, `Cart/${items[i][0]}`);
         remove(exacthlocation);
+        inputEl.value = ""
       });
       ulEl.appendChild(newItem);
     }
